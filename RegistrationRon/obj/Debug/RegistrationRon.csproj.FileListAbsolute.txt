@@ -1,0 +1,10 @@
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\bin\Debug\RegistrationRon.exe.config
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\bin\Debug\RegistrationRon.exe
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\bin\Debug\RegistrationRon.pdb
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.csprojAssemblyReference.cache
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.Form1.resources
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.Properties.Resources.resources
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.csproj.GenerateResource.cache
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.csproj.CoreCompileInputs.cache
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.exe
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.pdb
