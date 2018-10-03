@@ -143,13 +143,14 @@ namespace RegistrationRon
         public void Upddate()
         {
             DBSetup();
-            cmd = "Update Students set FirstName ='" + getfname() + "',"
+            cmd = "Update Students set  ID= " + getsid() + ","
+                + "FirstName ='" + getfname() + "',"
                 + "LastName ='" + getlname() + "',"
                 + "Street = '" + base.a1.getstreet() + "',"
                 + "City = '" + base.a1.getcity() + "',"
                 + "State = '" + base.a1.getstate() + "',"
                 + "Zip = " + base.a1.getzip() + ","
-                + " Office ='" + getemail() + "',"
+                + "Email ='" + getemail() + "',"
                 + "GPA =" + getgpa() + " "
                
                + "where ID = " + getsid();
