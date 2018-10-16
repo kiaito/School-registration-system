@@ -11,13 +11,7 @@ namespace RegistrationRon
         Section[] sec = new Section[10];
         int count;
 
-
-        public void Section()
-        {
-            
-        }
-
-        public void add(Section s)
+        public void addSection(Section s)
         {
             sec[count] = s;
             count++;
@@ -25,12 +19,13 @@ namespace RegistrationRon
 
         public void display()
         {
+            Console.WriteLine("===========================");
             for (int i=0; i<count; i++)
             {
                 sec[i].display();
+                Console.WriteLine("-------------------------");
             }
         }
-
 
     }
 }

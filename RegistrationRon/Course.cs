@@ -1,6 +1,6 @@
 ﻿/**************
  * Levi Llewellyn
- * Lab#2
+ * Lab#6
  Courses Class
  **********/
 

@@ -1,6 +1,6 @@
 ﻿/**************
  * Levi Llewellyn
- * Lab#2
+ * Lab#5&6
  Form
  **********/
 
@@ -49,7 +49,7 @@ namespace RegistrationRon
             //sc.setCourseID("fffff");
             //sc.setDaytime("tyyui");
             //sc.Upddate();
-            sc.DeleteDB();
+          //  sc.DeleteDB();
             sc.display();
         }
 
@@ -73,7 +73,7 @@ namespace RegistrationRon
             //c3.Upddate();
             Course c3 = new Course();
             c3.SelectDB("CIST 1313");
-            c3.DeleteDB();
+            //c3.DeleteDB();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace RegistrationRon
             Person p1;
             p1 = new Person("kevin", "Davis", new Address("timberview", "atlanta", "georgia", 30188), "kdavis@gmail.com");
             // p1.display();
-            p1.ss.add(new Section(746, "CIST2385", "thursday 4.30", "f1150", 768));
+            p1.ss.addSection(new Section(746, "CIST2385", "thursday 4.30", "f1150", 768));
             p1.display();
              
         }
@@ -108,11 +108,9 @@ namespace RegistrationRon
             s3.display();*/
             Student s2;
             s2 = new  Student();
-            s2.SelectDB(76);
-            s2.setlname("Your moma");
-            s2.setfname("Who me nah");
-            s2.Upddate();
+            s2.SelectDB(10);
             s2.display();
+          
 
         }
 
@@ -128,9 +126,10 @@ namespace RegistrationRon
                         i1.display();*/
 
             Instructor i2 = new Instructor();
-            i2.SelectDB(90);
+            i2.SelectDB(2);
+            i2.display();
 
-            i2.DeleteDB();
+            //i2.DeleteDB();
 
             /*
             Instructor s3;
