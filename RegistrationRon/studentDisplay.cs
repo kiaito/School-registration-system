@@ -21,5 +21,25 @@ namespace RegistrationRon
         {
 
         }
+
+        private void submitid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int sid = Int32.Parse(studentidtb.Text);
+
+                Student s1 = new Student();
+                s1.SelectDB(sid);
+                s1.display();
+                
+                firstNamelb.Text = s1.getfname();
+                lastName.Text = s1.getlname();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

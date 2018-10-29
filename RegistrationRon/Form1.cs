@@ -44,13 +44,13 @@ namespace RegistrationRon
             /*Section s3;
             s3 = new Section(746, "CIST2385", "TTH4-5pm", "f5550", 768);
             s3.InsertDB();*/
-            Section sc = new Section();
-            sc.SelectDB(746);
+            //Section sc = new Section();
+            //sc.SelectDB(746);
             //sc.setCourseID("fffff");
             //sc.setDaytime("tyyui");
             //sc.Upddate();
-            sc.DeleteDB();
-            sc.display();
+            //sc.DeleteDB();
+            //sc.display();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -98,21 +98,21 @@ namespace RegistrationRon
             /* Student ss1;
              ss1 = new Student(32, "jimboy", "Brono", new Address("summit place drive", "atlanta", "georgia", 30188), "Jbrono@gmail.com", 4.5);
              ss1.display(); */
-            /* s2;
+            Student s2;
             s2 = new Student();
-            s2.SelectDB(7);
-            s2.display();*/
+            s2.SelectDB(6);
+            s2.display();
             /*Student s3;
             s3 = new Student(76, "Kevin", "Davis", new Address("162 timbelan", "Crooklyn", "Hawali", 34323), "walton@gmail.com", 5.7);
             s3.InsertDB();
             s3.display();*/
-            Student s2;
+            /* Student s2;
             s2 = new  Student();
             s2.SelectDB(76);
             s2.setlname("Your moma");
             s2.setfname("Who me nah");
             s2.Upddate();
-            s2.display();
+            s2.display(); */
 
         }
 

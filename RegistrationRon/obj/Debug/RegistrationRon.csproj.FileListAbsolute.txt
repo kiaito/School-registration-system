@@ -8,5 +8,5 @@ C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\Registrati
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.csproj.CoreCompileInputs.cache
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.exe
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.pdb
-C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.submit.resources
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.studentDisplay.resources
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.Loginform.resources

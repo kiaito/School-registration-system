@@ -227,11 +227,13 @@ namespace RegistrationRon
         //-----------Display Method-----------//
         public void display()
         {
+            Console.WriteLine("--------------------");
             Console.WriteLine("crn = " + getCrn());
             Console.WriteLine("Course ID = " + getCourseID());
             Console.WriteLine("Day Time = " + getDaytime());
             Console.WriteLine("Room = " + getroom());
             Console.WriteLine("Instructor ID = " + getinstructorID());
+            Console.WriteLine("---------------------");
           
         }
 
