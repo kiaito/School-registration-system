@@ -8,8 +8,8 @@ namespace RegistrationRon
 {
     class Schedule
     {
-        Section[] sec = new Section[10];
-        int count;
+        public Section[] sec = new Section[10];
+        public int count;
 
 
         public void Section()
