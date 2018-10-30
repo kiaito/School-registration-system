@@ -179,6 +179,39 @@ namespace RegistrationRon
                   }
               } //End InsertDB()
 
+        public void Insertsch(int cc)
+        {
+            DBSetup();
+
+            cmd = "Insert into StudentSchedule values(" + getsid() + "," + cc + ")";
+         
+            OleDbDataAdapter2.InsertCommand.CommandText = cmd;
+            OleDbDataAdapter2.InsertCommand.Connection = OleDbConnection;
+            Console.WriteLine(cmd);
+            try
+            {
+                OleDbConnection.Open();
+                int n = OleDbDataAdapter2.InsertCommand.ExecuteNonQuery();
+                if (n == 1)
+                {
+                    Console.WriteLine("Data Inserted");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Inserting Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                OleDbConnection.Close();
+            }
+        }
+
+
         //------Update into Database-------//
         public void Upddate()
         {

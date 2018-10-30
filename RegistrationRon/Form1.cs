@@ -54,8 +54,8 @@ namespace RegistrationRon
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            /*Course c1;
+        {/*
+            Course c1;
             c1 = new Course("CIST756", "Java 2", "advance java project", 4);
             c1.display();  
             Course c2;
