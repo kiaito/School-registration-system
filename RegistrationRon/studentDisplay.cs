@@ -35,6 +35,14 @@ namespace RegistrationRon
                 
                 firstNamelb.Text = s1.getfname();
                 lastName.Text = s1.getlname();
+
+                int c = s1.ss.count;
+                //for
+              string n1 = s1.ss.sec[0].getCrn() + " "+ s1.ss.sec[0].getCourseID();
+
+                    listBox1.Items.Add(n1);
+                //}//end for
+                        
             }
             catch(Exception ex)
             {
