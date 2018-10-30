@@ -2,12 +2,22 @@
 
 Using Visual Studio C#.Net framework
 
-Building a Software system that would allow students to register for classes.
+Currently Building a Software system that would allow students to register for classes.
 
 The student would be able to: 
 - Login
-- Search for classes 
+- Display current class schedule
+- Search for classes by Crn numbers
 - Register for a class
-- View their schedule
+- View current schedule
+
+Business Objects:
+-Student
+-Instructor
+-Section
+-Cources
+-Address
+-Schedule
+
 
 
