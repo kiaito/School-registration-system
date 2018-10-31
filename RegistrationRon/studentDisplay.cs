@@ -50,7 +50,7 @@ namespace RegistrationRon
                     listBox1.Items.Add(n1);
                 }
                 //}//end for
-                        
+                
             }
             catch(Exception ex)
             {
@@ -61,6 +61,18 @@ namespace RegistrationRon
         private void button1_Click(object sender, EventArgs e)
         {
             ww.Insertsch(Int32.Parse(crntb.Text));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Section ss1 = new Section();
+            string comb = crnBox.Text;
+
+          ss1.SelectDB(Int32.Parse(comb));
+          //crn
+          //course1d 
+          //room/days
+            ss1.display();
         }
     }
 }
