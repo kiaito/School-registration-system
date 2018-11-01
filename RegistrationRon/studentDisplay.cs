@@ -58,10 +58,19 @@ namespace RegistrationRon
                 Console.WriteLine(ex);
             }
         }
-
+        
+        //Inserting a class
         private void button1_Click(object sender, EventArgs e)
         {
-            ww.Insertsch(Int32.Parse(roomtb.Text));
+            try
+            {
+                ww.Insertsch(Int32.Parse(crnBox.Text));
+                MessageBox.Show("Class Added Successful!");
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show("Error inserting");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +90,7 @@ namespace RegistrationRon
 
             Instructor in1 = new Instructor();
             in1.SelectDB(ss1.getinstructorID());
-            intb.Text = in1.getfname() + in1.getlname();
+            intb.Text = in1.getfname() +" "+ in1.getlname();
           //crn
           //course1d 
           //room/days
@@ -126,6 +135,21 @@ namespace RegistrationRon
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        //Dropping a class
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ww.Deletesch(Int32.Parse(crnBox.Text));
+                MessageBox.Show("Class Dropped Successful!");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error Deleting");
+            }
+            
         }
     }
 }

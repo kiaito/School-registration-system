@@ -16,7 +16,7 @@ namespace RegistrationRon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new studentDisplay());
+            Application.Run(new Admin());
         }
     }
 }
