@@ -16,14 +16,13 @@ The Administrator would be able to
 - Login
 - 
 
-
 Business Objects:
--Student
--Instructor
--Section
--Cources
--Address
--Schedule
+- Student
+- Instructor
+- Section
+- Cources
+- Address
+- Schedule
 
 
 
