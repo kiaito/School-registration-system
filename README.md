@@ -9,7 +9,13 @@ The student would be able to:
 - Display current class schedule
 - Search for classes by Crn numbers
 - Register for a class
+- Drop a class
 - View current schedule
+
+The Administrator would be able to
+- Login
+- 
+
 
 Business Objects:
 -Student
