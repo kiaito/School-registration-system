@@ -29,5 +29,9 @@ Business Objects Used:
 - Address
 - Schedule
 
+Languages Used:
+- C#.Net
+- Sql
 
-
+IDE
+- Visual Studio 2017
