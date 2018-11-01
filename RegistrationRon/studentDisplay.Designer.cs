@@ -33,18 +33,49 @@
             this.submitid = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lastName = new System.Windows.Forms.Label();
-            this.firstNamelb = new System.Windows.Forms.Label();
+            this.Namelb = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.crntb = new System.Windows.Forms.TextBox();
+            this.roomtb = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.crnBox = new System.Windows.Forms.ComboBox();
+            this.timedtb = new System.Windows.Forms.TextBox();
+            this.nametb = new System.Windows.Forms.TextBox();
+            this.emailtb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.gpatb = new System.Windows.Forms.TextBox();
+            this.desclb = new System.Windows.Forms.Label();
+            this.cnamelb = new System.Windows.Forms.Label();
+            this.desctb = new System.Windows.Forms.TextBox();
+            this.cnametb = new System.Windows.Forms.TextBox();
+            this.courseidtb = new System.Windows.Forms.TextBox();
+            this.crn = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.intb = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // studentidlb
             // 
             this.studentidlb.AutoSize = true;
-            this.studentidlb.Location = new System.Drawing.Point(7, 15);
+            this.studentidlb.Location = new System.Drawing.Point(4, 15);
             this.studentidlb.Name = "studentidlb";
             this.studentidlb.Size = new System.Drawing.Size(89, 13);
             this.studentidlb.TabIndex = 0;
@@ -52,53 +83,58 @@
             // 
             // studentidtb
             // 
-            this.studentidtb.Location = new System.Drawing.Point(99, 12);
+            this.studentidtb.Location = new System.Drawing.Point(96, 12);
             this.studentidtb.Name = "studentidtb";
             this.studentidtb.Size = new System.Drawing.Size(38, 20);
             this.studentidtb.TabIndex = 1;
             // 
             // submitid
             // 
-            this.submitid.Location = new System.Drawing.Point(144, 9);
+            this.submitid.Location = new System.Drawing.Point(141, 9);
             this.submitid.Name = "submitid";
             this.submitid.Size = new System.Drawing.Size(75, 23);
             this.submitid.TabIndex = 2;
-            this.submitid.Text = "Submit";
+            this.submitid.Text = "Enter";
             this.submitid.UseVisualStyleBackColor = true;
             this.submitid.Click += new System.EventHandler(this.submitid_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 43);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(137, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Hello:";
+            this.label1.Text = "Student Schedule";
             // 
             // lastName
             // 
             this.lastName.AutoSize = true;
-            this.lastName.Location = new System.Drawing.Point(126, 43);
+            this.lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName.Location = new System.Drawing.Point(8, 15);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(58, 13);
+            this.lastName.Size = new System.Drawing.Size(70, 16);
             this.lastName.TabIndex = 4;
-            this.lastName.Text = "Last Name";
+            this.lastName.Text = "Course ID:";
+            this.lastName.Click += new System.EventHandler(this.lastName_Click);
             // 
-            // firstNamelb
+            // Namelb
             // 
-            this.firstNamelb.AutoSize = true;
-            this.firstNamelb.Location = new System.Drawing.Point(42, 43);
-            this.firstNamelb.Name = "firstNamelb";
-            this.firstNamelb.Size = new System.Drawing.Size(54, 13);
-            this.firstNamelb.TabIndex = 5;
-            this.firstNamelb.Text = "FirstName";
+            this.Namelb.AutoSize = true;
+            this.Namelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Namelb.Location = new System.Drawing.Point(9, 43);
+            this.Namelb.Name = "Namelb";
+            this.Namelb.Size = new System.Drawing.Size(48, 16);
+            this.Namelb.TabIndex = 5;
+            this.Namelb.Text = "Name:";
+            this.Namelb.Click += new System.EventHandler(this.firstNamelb_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(161, 235);
+            this.button1.Location = new System.Drawing.Point(63, 75);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(153, 37);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add Class";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,58 +143,327 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 244);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(59, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Crn";
+            this.label2.Text = "Avaiable Classes";
             // 
-            // crntb
+            // roomtb
             // 
-            this.crntb.Location = new System.Drawing.Point(45, 237);
-            this.crntb.Name = "crntb";
-            this.crntb.Size = new System.Drawing.Size(100, 20);
-            this.crntb.TabIndex = 8;
+            this.roomtb.Location = new System.Drawing.Point(84, 118);
+            this.roomtb.Name = "roomtb";
+            this.roomtb.Size = new System.Drawing.Size(153, 20);
+            this.roomtb.TabIndex = 8;
+            this.roomtb.TextChanged += new System.EventHandler(this.crntb_TextChanged);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 69);
+            this.listBox1.Location = new System.Drawing.Point(9, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(253, 147);
+            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBox1.Size = new System.Drawing.Size(226, 82);
             this.listBox1.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(413, 244);
+            this.label3.Location = new System.Drawing.Point(155, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 10;
+            // 
+            // crnBox
+            // 
+            this.crnBox.FormattingEnabled = true;
+            this.crnBox.Items.AddRange(new object[] {
+            "30101",
+            "30102",
+            "30103",
+            "30104",
+            "30105",
+            "30106",
+            "30108",
+            "30109",
+            "30110",
+            "30111",
+            "30112",
+            "30113",
+            "30114",
+            "30115",
+            "30116",
+            "31107"});
+            this.crnBox.Location = new System.Drawing.Point(63, 39);
+            this.crnBox.Name = "crnBox";
+            this.crnBox.Size = new System.Drawing.Size(153, 21);
+            this.crnBox.TabIndex = 11;
+            this.crnBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // timedtb
+            // 
+            this.timedtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timedtb.Location = new System.Drawing.Point(84, 90);
+            this.timedtb.Name = "timedtb";
+            this.timedtb.Size = new System.Drawing.Size(153, 22);
+            this.timedtb.TabIndex = 12;
+            // 
+            // nametb
+            // 
+            this.nametb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nametb.Location = new System.Drawing.Point(63, 43);
+            this.nametb.Name = "nametb";
+            this.nametb.Size = new System.Drawing.Size(153, 22);
+            this.nametb.TabIndex = 13;
+            // 
+            // emailtb
+            // 
+            this.emailtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailtb.Location = new System.Drawing.Point(63, 71);
+            this.emailtb.Name = "emailtb";
+            this.emailtb.Size = new System.Drawing.Size(153, 22);
+            this.emailtb.TabIndex = 14;
+            this.emailtb.TextChanged += new System.EventHandler(this.addresstb_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Email:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "GPA:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // gpatb
+            // 
+            this.gpatb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpatb.Location = new System.Drawing.Point(63, 100);
+            this.gpatb.Name = "gpatb";
+            this.gpatb.Size = new System.Drawing.Size(153, 22);
+            this.gpatb.TabIndex = 17;
+            // 
+            // desclb
+            // 
+            this.desclb.AutoSize = true;
+            this.desclb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desclb.Location = new System.Drawing.Point(-1, 62);
+            this.desclb.Name = "desclb";
+            this.desclb.Size = new System.Drawing.Size(79, 16);
+            this.desclb.TabIndex = 18;
+            this.desclb.Text = "Description:";
+            this.desclb.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // cnamelb
+            // 
+            this.cnamelb.AutoSize = true;
+            this.cnamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cnamelb.Location = new System.Drawing.Point(27, 38);
+            this.cnamelb.Name = "cnamelb";
+            this.cnamelb.Size = new System.Drawing.Size(51, 16);
+            this.cnamelb.TabIndex = 19;
+            this.cnamelb.Text = "Name :";
+            // 
+            // desctb
+            // 
+            this.desctb.Location = new System.Drawing.Point(84, 62);
+            this.desctb.Name = "desctb";
+            this.desctb.Size = new System.Drawing.Size(153, 20);
+            this.desctb.TabIndex = 20;
+            // 
+            // cnametb
+            // 
+            this.cnametb.Location = new System.Drawing.Point(84, 36);
+            this.cnametb.Name = "cnametb";
+            this.cnametb.Size = new System.Drawing.Size(153, 20);
+            this.cnametb.TabIndex = 21;
+            // 
+            // courseidtb
+            // 
+            this.courseidtb.Location = new System.Drawing.Point(84, 11);
+            this.courseidtb.Name = "courseidtb";
+            this.courseidtb.Size = new System.Drawing.Size(153, 20);
+            this.courseidtb.TabIndex = 22;
+            // 
+            // crn
+            // 
+            this.crn.AutoSize = true;
+            this.crn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crn.Location = new System.Drawing.Point(19, 42);
+            this.crn.Name = "crn";
+            this.crn.Size = new System.Drawing.Size(38, 16);
+            this.crn.TabIndex = 23;
+            this.crn.Text = "Crn #";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(63, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 38);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Drop Class";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Location = new System.Drawing.Point(8, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(503, 160);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            // 
+            // directorySearcher1
+            // 
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.groupBox5);
+            this.groupBox2.Controls.Add(this.groupBox6);
+            this.groupBox2.Location = new System.Drawing.Point(8, 168);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(503, 181);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            // 
+            // intb
+            // 
+            this.intb.Location = new System.Drawing.Point(84, 147);
+            this.intb.Name = "intb";
+            this.intb.Size = new System.Drawing.Size(153, 20);
+            this.intb.TabIndex = 25;
+            this.intb.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(242, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(253, 134);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.nametb);
+            this.groupBox4.Controls.Add(this.studentidlb);
+            this.groupBox4.Controls.Add(this.emailtb);
+            this.groupBox4.Controls.Add(this.gpatb);
+            this.groupBox4.Controls.Add(this.studentidtb);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.Namelb);
+            this.groupBox4.Controls.Add(this.submitid);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Location = new System.Drawing.Point(6, 14);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(230, 134);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.crn);
+            this.groupBox5.Controls.Add(this.crnBox);
+            this.groupBox5.Location = new System.Drawing.Point(6, 7);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(230, 167);
+            this.groupBox5.TabIndex = 27;
+            this.groupBox5.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.intb);
+            this.groupBox6.Controls.Add(this.courseidtb);
+            this.groupBox6.Controls.Add(this.cnamelb);
+            this.groupBox6.Controls.Add(this.desclb);
+            this.groupBox6.Controls.Add(this.lastName);
+            this.groupBox6.Controls.Add(this.desctb);
+            this.groupBox6.Controls.Add(this.label3);
+            this.groupBox6.Controls.Add(this.timedtb);
+            this.groupBox6.Controls.Add(this.cnametb);
+            this.groupBox6.Controls.Add(this.roomtb);
+            this.groupBox6.Location = new System.Drawing.Point(242, 7);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(253, 168);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Room No:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Time Days:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 148);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Instructor:";
             // 
             // studentDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(426, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.crntb);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.firstNamelb);
-            this.Controls.Add(this.lastName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.submitid);
-            this.Controls.Add(this.studentidtb);
-            this.Controls.Add(this.studentidlb);
+            this.ClientSize = new System.Drawing.Size(524, 370);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Name = "studentDisplay";
             this.Text = "studentDisplay";
             this.Load += new System.EventHandler(this.studentDisplay_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -169,11 +474,36 @@
         private System.Windows.Forms.Button submitid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lastName;
-        private System.Windows.Forms.Label firstNamelb;
+        private System.Windows.Forms.Label Namelb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox crntb;
+        private System.Windows.Forms.TextBox roomtb;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox crnBox;
+        private System.Windows.Forms.TextBox timedtb;
+        private System.Windows.Forms.TextBox nametb;
+        private System.Windows.Forms.TextBox emailtb;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox gpatb;
+        private System.Windows.Forms.Label desclb;
+        private System.Windows.Forms.Label cnamelb;
+        private System.Windows.Forms.TextBox desctb;
+        private System.Windows.Forms.TextBox cnametb;
+        private System.Windows.Forms.TextBox courseidtb;
+        private System.Windows.Forms.Label crn;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.DirectoryServices.DirectorySearcher directorySearcher1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox intb;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
