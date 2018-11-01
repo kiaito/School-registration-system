@@ -66,7 +66,7 @@ namespace RegistrationRon
             "r=False;User ID=Admin;Jet OLEDB:Global Bulk Transactions=1";
         } //end DB setup
 
-        //----Select Database Connection-----//
+        //----Select student Database Connection-----//
         public void SelectDB(int id)
         {
             DBSetup();
@@ -179,6 +179,7 @@ namespace RegistrationRon
                   }
               } //End InsertDB()
 
+        //Inserting into the student schedule database
         public void Insertsch(int cc)
         {
             DBSetup();
@@ -209,7 +210,7 @@ namespace RegistrationRon
             {
                 OleDbConnection.Close();
             }
-        }
+        }//End inserting
 
 
         //------Update into Database-------//
@@ -285,6 +286,40 @@ namespace RegistrationRon
                 OleDbConnection.Close();
             }
         }//End of Delete()
+
+
+        //Deleting from student schedule 
+        public void Deletesch(int crnb)
+        {
+            DBSetup();
+            cmd = "Delete from StudentSchedule where StudentID = "+  getsid() + " AND CRN = " + crnb;
+
+            OleDbDataAdapter2.InsertCommand.CommandText = cmd;
+            OleDbDataAdapter2.InsertCommand.Connection = OleDbConnection;
+            Console.WriteLine(cmd);
+            try
+            {
+                OleDbConnection.Open();
+                int n = OleDbDataAdapter2.InsertCommand.ExecuteNonQuery();
+                if (n == 1)
+                {
+                    Console.WriteLine("Data Deleted");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Deleting Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                OleDbConnection.Close();
+            }
+        }//End of Delete()
+
 
 
         public void display()
