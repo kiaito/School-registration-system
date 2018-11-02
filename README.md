@@ -1,10 +1,11 @@
 # School-registration-system
 
-Using Visual Studio C#.Net framework
+### Using Visual Studio C#.Net framework
 
-Currently Building a School Registration Software system that would allow students to view and edit their schedule also register for classes.
+Currently Building a School Registration Software system that would allow students to Login as a student to view and edit their schedule also to register for classes. 
+The Administrator will be able to add delete or update any information in the Students, Instructors, Sections, Courses.
 
-The student would be able to: 
+### The student would be able to: 
 - Login
 - Display current class schedule
 - Search for classes by Crn
@@ -13,7 +14,7 @@ The student would be able to:
 - Drop a class
 - View current schedule
 
-The Administrator would be able to
+### The Administrator would be able to
 - Login
 - Main Control Panel
 - Add Update Delete Student
@@ -21,7 +22,7 @@ The Administrator would be able to
 - Add Update Delete Sections
 - Add Update Delete Courses
 
-Business Objects Used:
+### Business Objects Used:
 - Student
 - Instructor
 - Section
@@ -29,9 +30,9 @@ Business Objects Used:
 - Address
 - Schedule
 
-Languages Used:
+### Languages Used:
 - C#.Net
 - Sql
 
-IDE
+### IDE
 - Visual Studio 2017
