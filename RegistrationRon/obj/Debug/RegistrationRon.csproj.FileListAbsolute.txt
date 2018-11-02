@@ -11,3 +11,4 @@ C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\Registrati
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.studentDisplay.resources
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.Loginform.resources
 C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.Admin.resources
+C:\Users\grob1\source\repos\RegistrationRon\RegistrationRon\obj\Debug\RegistrationRon.StudentControl.resources
