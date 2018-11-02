@@ -223,7 +223,7 @@ namespace RegistrationRon
                 + "City = '" + base.a1.getcity() + "',"
                 + "State = '" + base.a1.getstate() + "',"
                 + "Zip = " + base.a1.getzip() + ","
-                + " Office ='" + getemail() + "',"
+                + " EMail ='" + getemail() + "',"
                 + "GPA =" + getgpa() + " "
                
                + "where ID = " + getsid();
@@ -322,7 +322,7 @@ namespace RegistrationRon
 
 
 
-        public void display()
+        public void Display()
         {
             Console.WriteLine("Student ID = " + getsid());
             base.display();

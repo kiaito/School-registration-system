@@ -74,6 +74,12 @@
     <Compile Include="Schedule.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StudentControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentControl.Designer.cs">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="studentDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentControl.resx">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="studentDisplay.resx">
       <DependentUpon>studentDisplay.cs</DependentUpon>
     </EmbeddedResource>
