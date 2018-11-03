@@ -103,8 +103,47 @@ namespace RegistrationRon
             {
                 OleDbConnection.Close();
             }
+            GetList();
         }
         // end SelectDB
+
+        // getting schedule list instructor
+        public void GetList()     {
+
+            cmd = "Select CRN from Sections where Instructor = " + iid + "";
+            OleDbDataAdapter2.SelectCommand.CommandText = cmd;
+            OleDbDataAdapter2.SelectCommand.Connection = OleDbConnection;
+            Console.WriteLine(cmd);
+            int CRN = 0;
+            Section s1 = new Section();
+            try
+            {
+
+                OleDbConnection.Open();
+                System.Data.OleDb.OleDbDataReader dr;
+                dr = OleDbDataAdapter2.SelectCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    CRN = Int32.Parse(dr.GetValue(0) + "");
+                    s1 = new Section();
+                    s1.SelectDB(CRN);
+                    ss.add(s1);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                OleDbConnection.Close();
+            }
+
+
+        }
+
 
         //------Insert Database method-------//
         public void InsertDB()

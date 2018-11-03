@@ -26,7 +26,7 @@ namespace RegistrationRon
         {
 
         }
-
+        //Enter button
         private void submitid_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -53,6 +53,18 @@ namespace RegistrationRon
                 emailtb.Text = s1.getemail();
                 gpatb.Text = s1.getgpa().ToString();
 
+                //Assigning textbox data to var
+                sidy = Int32.Parse(studentidtb.Text);
+                fname = fsnametb.Text;
+                lname = slnametb.Text;
+                street = streettb.Text;
+                city = citytb.Text;
+                state = statetb.Text;
+                zip = Double.Parse(ziptb.Text);
+                email = emailtb.Text;
+                gpa = Double.Parse(gpatb.Text);
+
+                //Getting schedule
                 int c = s1.ss.count;
                 for (int i = 0; i < c; i++)
                 {
@@ -82,6 +94,7 @@ namespace RegistrationRon
         //Update button
         private void button2_Click(object sender, EventArgs e)
         {
+           // Student ss1 = new Student();
             //Assigning textboxs values to var
             try
             {
@@ -103,23 +116,22 @@ namespace RegistrationRon
                 }
                 else
                 {//Updating student into database
-                    Student ss2 = new Student();
-                    ss2.SelectDB(sidy);
-                    ss2.setfname(fname);
-                    ss2.setlname(lname);
-                    ss2.a1.setstreet(street);
-                    ss2.a1.setcity(city);
-                    ss2.a1.setstate(state);
-                    ss2.a1.setzip(zip);
-                    ss2.setemail(email);
-                    ss2.setgpa(gpa);
-                    ss2.display();
-                    ss2.SelectDB(sidy);
+                    
+                    //ss1.SelectDB(sidy);
+                    ww.setfname(fsnametb.Text);
+                    ww.setlname(lname);
+                    ww.a1.setstreet(street);
+                    ww.a1.setcity(city);
+                    ww.a1.setstate(state);
+                    ww.a1.setzip(zip);
+                    ww.setemail(email);
+                    ww.setgpa(gpa);
+                    ww.display();
+                    //ww.SelectDB(sidy);
                   
-                    ss2.Upddate();
+                    ww.Upddate();
 
-                    MessageBox.Show(sidy + fname +lname);
-                }
+                    MessageBox.Show("Student Data Updated Successful!");               }
 
             }
             catch (Exception ad)
@@ -127,6 +139,21 @@ namespace RegistrationRon
                 MessageBox.Show(ad.ToString());
             }
 
+        }// endupdating
+        // Delete Button
+        private void dropC_Click(object sender, EventArgs e)
+        {
+            //Deleting Student from database
+            try
+            {
+                ww.SelectDB(sidy);
+                ww.DeleteDB();
+                MessageBox.Show("Student Data Deletion Successful!");
+            }
+            catch(Exception are)
+            {
+                MessageBox.Show(are.ToString());
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
