@@ -252,7 +252,7 @@ namespace RegistrationRon
             {
                 OleDbConnection.Close();
             }
-        } //End InsertDB()
+        } //End UpdateDB()
 
 
         //Deleting DadaBase Method

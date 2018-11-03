@@ -10,6 +10,7 @@ namespace RegistrationRon
     {
         public Section[] sec = new Section[10];
         public int count;
+        public Course[] arc = new Course[15];
 
 
         public void Section()
@@ -31,6 +32,14 @@ namespace RegistrationRon
             }
         }
 
+        public void Course()
+        {
 
+        }
+        public void addc(Course c)
+        {
+            arc[count] = c;
+            count++;
+        }
     }
 }

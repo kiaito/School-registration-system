@@ -19,6 +19,7 @@ namespace RegistrationRon
         public string CourseName;
         public string Description;
         public int CreditHour;
+        public Schedule ssy = new Schedule();
 
         //--------constructors---------//
         public Course()
@@ -128,11 +129,95 @@ namespace RegistrationRon
             {
                 OleDbConnection.Close();
             }
+            //GetcList();
+            //SelectDBt();
             // end SelectDB
         }
 
+      /*  public void SelectDBt()
+        {
+            //Course s1 = new Course();
+            DBSetup();
+            cmd = "Select * from Courses";
+            OleDbDataAdapter2.SelectCommand.CommandText = cmd;
+            OleDbDataAdapter2.SelectCommand.Connection = OleDbConnection;
+            Console.WriteLine(cmd);
+            try
+            {
+                OleDbConnection.Open();
+                System.Data.OleDb.OleDbDataReader dr;
+                dr = OleDbDataAdapter2.SelectCommand.ExecuteReader();
+               // string lines = "";
+                while (dr.Read())
+                {
+                    // dr.Read();
+                    Course c2 = new Course();
+                    setCourseID(dr.GetValue(0) + "");
+                    setCourseName(dr.GetValue(1) + "");
+                    setDescription(dr.GetValue(2) + "");
+                    setCreditHour(Int32.Parse(dr.GetValue(3) + ""));
+                    ssy.addc(c2);
+                    c2.display();
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                OleDbConnection.Close();
+            }
+            //GetcList();
+            // end SelectDB
+        }
+
+            */
+
+
+        public void GetcList()
+         {
+
+             cmd = "Select * from Courses where CourseID = '" + CourseID + "'";
+             OleDbDataAdapter2.SelectCommand.CommandText = cmd;
+             OleDbDataAdapter2.SelectCommand.Connection = OleDbConnection;
+             Console.WriteLine(cmd);
+             string crid = "";
+             Course s1 = new Course();
+             try
+             {
+
+                 OleDbConnection.Open();
+                 System.Data.OleDb.OleDbDataReader dr;
+                 dr = OleDbDataAdapter2.SelectCommand.ExecuteReader();
+                string liner = "";
+                while (dr.Read())
+                
+                 {
+                     crid = dr.GetValue(0) + "";
+                     s1 = new Course();
+
+                     s1.SelectDB(crid);
+                     ssy.addc(s1);
+                 }
+                
+             }
+             catch (Exception ex)
+             {
+                 Console.WriteLine(ex);
+             }
+             finally
+             {
+                 OleDbConnection.Close();
+             }
+
+
+         }
+
+
         //------Inserrt into Database-------//
-      public void InsertDB()
+        public void InsertDB()
         {
             DBSetup();
             cmd = "Insert into Courses values('" + getCourseID() + "'," + "'" + getCourseName() + "'," 

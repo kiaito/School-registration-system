@@ -12,12 +12,14 @@ using System.Threading.Tasks;
 namespace RegistrationRon
 {
     class Section
-    {
+    {//Declarations
         public int Crn;
         public string CourseID;
         public string Daytime;
         public string Room;
         public int InstructorID;
+        public Schedule ss = new Schedule();
+
 
         public Section()
         {
@@ -122,6 +124,40 @@ namespace RegistrationRon
             }
         }
         // end SelectDB
+
+        //----Select Database Connection-----//
+        public void SelectDBi(int id)
+        {
+            DBSetup();
+            cmd = "Select * from Sections where Instructor = " + id;
+            OleDbDataAdapter2.SelectCommand.CommandText = cmd;
+            OleDbDataAdapter2.SelectCommand.Connection = OleDbConnection;
+            Console.WriteLine(cmd);
+            try
+            {
+                OleDbConnection.Open();
+                System.Data.OleDb.OleDbDataReader dr;
+                dr = OleDbDataAdapter2.SelectCommand.ExecuteReader();
+
+                dr.Read();
+                setCrn(Int32.Parse(dr.GetValue(0) + ""));
+                setCourseID(dr.GetValue(1) + "");
+                setDaytime(dr.GetValue(2) + "");
+                setroom(dr.GetValue(3) + "");
+                InstructorID = id;
+                //setinstructorID(Int32.Parse(dr.GetValue(4) + ""));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                OleDbConnection.Close();
+            }
+        }
+        // end SelectDB
+
 
         //------Inserrt into Database-------//
         public void InsertDB()
