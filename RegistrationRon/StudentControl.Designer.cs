@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dropC = new System.Windows.Forms.Button();
             this.crn = new System.Windows.Forms.Label();
+            this.studentidlb = new System.Windows.Forms.Label();
+            this.submitid = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.fsnametb = new System.Windows.Forms.TextBox();
@@ -53,17 +58,55 @@
             this.citytb = new System.Windows.Forms.TextBox();
             this.slnametb = new System.Windows.Forms.TextBox();
             this.statetb = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.studentidlb = new System.Windows.Forms.Label();
-            this.studentidtb = new System.Windows.Forms.TextBox();
-            this.submitid = new System.Windows.Forms.Button();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Instructorlink = new System.Windows.Forms.LinkLabel();
+            this.CoursesLink = new System.Windows.Forms.LinkLabel();
+            this.SectionLink = new System.Windows.Forms.LinkLabel();
+            this.Studentidcb = new System.Windows.Forms.ComboBox();
+            this.ResetAllFields = new System.Windows.Forms.LinkLabel();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Studentidcb);
+            this.groupBox4.Controls.Add(this.groupBox1);
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.studentidlb);
+            this.groupBox4.Controls.Add(this.submitid);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 30);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(276, 352);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Search";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(262, 137);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Schedule";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(7, 23);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBox1.Size = new System.Drawing.Size(247, 100);
+            this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // groupBox5
             // 
@@ -118,6 +161,26 @@
             this.crn.Size = new System.Drawing.Size(0, 16);
             this.crn.TabIndex = 23;
             // 
+            // studentidlb
+            // 
+            this.studentidlb.AutoSize = true;
+            this.studentidlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentidlb.Location = new System.Drawing.Point(9, 25);
+            this.studentidlb.Name = "studentidlb";
+            this.studentidlb.Size = new System.Drawing.Size(106, 16);
+            this.studentidlb.TabIndex = 0;
+            this.studentidlb.Text = "Enter Student ID:";
+            // 
+            // submitid
+            // 
+            this.submitid.Location = new System.Drawing.Point(178, 20);
+            this.submitid.Name = "submitid";
+            this.submitid.Size = new System.Drawing.Size(75, 23);
+            this.submitid.TabIndex = 2;
+            this.submitid.Text = "Enter";
+            this.submitid.UseVisualStyleBackColor = true;
+            this.submitid.Click += new System.EventHandler(this.submitid_Click);
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label8);
@@ -140,7 +203,7 @@
             this.groupBox6.Controls.Add(this.slnametb);
             this.groupBox6.Controls.Add(this.statetb);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(290, 12);
+            this.groupBox6.Location = new System.Drawing.Point(290, 30);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(265, 352);
             this.groupBox6.TabIndex = 0;
@@ -326,122 +389,157 @@
             this.statetb.TabIndex = 7;
             this.statetb.TextChanged += new System.EventHandler(this.roomtb_TextChanged);
             // 
-            // groupBox4
+            // linkLabel1
             // 
-            this.groupBox4.Controls.Add(this.groupBox1);
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.studentidlb);
-            this.groupBox4.Controls.Add(this.studentidtb);
-            this.groupBox4.Controls.Add(this.submitid);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(276, 352);
-            this.groupBox4.TabIndex = 27;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Search";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(24, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(45, 16);
+            this.linkLabel1.TabIndex = 30;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Home";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // groupBox1
+            // Instructorlink
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 137);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Schedule";
+            this.Instructorlink.AutoSize = true;
+            this.Instructorlink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Instructorlink.Location = new System.Drawing.Point(79, 9);
+            this.Instructorlink.Name = "Instructorlink";
+            this.Instructorlink.Size = new System.Drawing.Size(61, 16);
+            this.Instructorlink.TabIndex = 31;
+            this.Instructorlink.TabStop = true;
+            this.Instructorlink.Text = "Instructor";
+            this.Instructorlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Instructorlink_LinkClicked);
             // 
-            // listBox1
+            // CoursesLink
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(7, 23);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listBox1.Size = new System.Drawing.Size(247, 100);
-            this.listBox1.TabIndex = 9;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.CoursesLink.AutoSize = true;
+            this.CoursesLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoursesLink.Location = new System.Drawing.Point(221, 9);
+            this.CoursesLink.Name = "CoursesLink";
+            this.CoursesLink.Size = new System.Drawing.Size(58, 16);
+            this.CoursesLink.TabIndex = 32;
+            this.CoursesLink.TabStop = true;
+            this.CoursesLink.Text = "Courses";
+            this.CoursesLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CoursesLink_LinkClicked);
             // 
-            // studentidlb
+            // SectionLink
             // 
-            this.studentidlb.AutoSize = true;
-            this.studentidlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentidlb.Location = new System.Drawing.Point(9, 25);
-            this.studentidlb.Name = "studentidlb";
-            this.studentidlb.Size = new System.Drawing.Size(106, 16);
-            this.studentidlb.TabIndex = 0;
-            this.studentidlb.Text = "Enter Student ID:";
+            this.SectionLink.AutoSize = true;
+            this.SectionLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionLink.Location = new System.Drawing.Point(152, 9);
+            this.SectionLink.Name = "SectionLink";
+            this.SectionLink.Size = new System.Drawing.Size(53, 16);
+            this.SectionLink.TabIndex = 33;
+            this.SectionLink.TabStop = true;
+            this.SectionLink.Text = "Section";
+            this.SectionLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SectionLink_LinkClicked);
             // 
-            // studentidtb
+            // Studentidcb
             // 
-            this.studentidtb.Location = new System.Drawing.Point(116, 22);
-            this.studentidtb.Name = "studentidtb";
-            this.studentidtb.Size = new System.Drawing.Size(38, 22);
-            this.studentidtb.TabIndex = 1;
+            this.Studentidcb.FormattingEnabled = true;
+            this.Studentidcb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "44",
+            "76",
+            "88"});
+            this.Studentidcb.Location = new System.Drawing.Point(121, 22);
+            this.Studentidcb.Name = "Studentidcb";
+            this.Studentidcb.Size = new System.Drawing.Size(38, 24);
+            this.Studentidcb.TabIndex = 29;
             // 
-            // submitid
+            // ResetAllFields
             // 
-            this.submitid.Location = new System.Drawing.Point(178, 20);
-            this.submitid.Name = "submitid";
-            this.submitid.Size = new System.Drawing.Size(75, 23);
-            this.submitid.TabIndex = 2;
-            this.submitid.Text = "Enter";
-            this.submitid.UseVisualStyleBackColor = true;
-            this.submitid.Click += new System.EventHandler(this.submitid_Click);
+            this.ResetAllFields.AutoSize = true;
+            this.ResetAllFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetAllFields.Location = new System.Drawing.Point(444, 11);
+            this.ResetAllFields.Name = "ResetAllFields";
+            this.ResetAllFields.Size = new System.Drawing.Size(92, 16);
+            this.ResetAllFields.TabIndex = 43;
+            this.ResetAllFields.TabStop = true;
+            this.ResetAllFields.Text = "Clear all fields";
+            this.ResetAllFields.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ResetAllFields_LinkClicked);
             // 
             // StudentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 376);
+            this.ClientSize = new System.Drawing.Size(566, 404);
+            this.Controls.Add(this.ResetAllFields);
+            this.Controls.Add(this.SectionLink);
+            this.Controls.Add(this.CoursesLink);
+            this.Controls.Add(this.Instructorlink);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Name = "StudentControl";
             this.Text = "StudentControl";
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button dropC;
         private System.Windows.Forms.Label crn;
+        private System.Windows.Forms.Label studentidlb;
+        private System.Windows.Forms.Button submitid;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox fsnametb;
+        private System.Windows.Forms.TextBox streettb;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox emailtb;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox gpatb;
         private System.Windows.Forms.TextBox ziptb;
         private System.Windows.Forms.TextBox sidd;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label cnamelb;
+        private System.Windows.Forms.Label sfnamelb;
         private System.Windows.Forms.Label streetlb;
         private System.Windows.Forms.Label studidlb;
-        private System.Windows.Forms.TextBox streettb;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox citytb;
         private System.Windows.Forms.TextBox slnametb;
         private System.Windows.Forms.TextBox statetb;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox fsnametb;
-        private System.Windows.Forms.Label studentidlb;
-        private System.Windows.Forms.TextBox emailtb;
-        private System.Windows.Forms.TextBox gpatb;
-        private System.Windows.Forms.TextBox studentidtb;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label sfnamelb;
-        private System.Windows.Forms.Button submitid;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel Instructorlink;
+        private System.Windows.Forms.LinkLabel CoursesLink;
+        private System.Windows.Forms.LinkLabel SectionLink;
+        private System.Windows.Forms.ComboBox Studentidcb;
+        private System.Windows.Forms.LinkLabel ResetAllFields;
     }
 }

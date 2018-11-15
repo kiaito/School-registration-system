@@ -37,7 +37,6 @@
             this.dropC = new System.Windows.Forms.Button();
             this.crn = new System.Windows.Forms.Label();
             this.studentidlb = new System.Windows.Forms.Label();
-            this.studentidtb = new System.Windows.Forms.TextBox();
             this.submitid = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,6 +58,12 @@
             this.citytb = new System.Windows.Forms.TextBox();
             this.slnametb = new System.Windows.Forms.TextBox();
             this.statetb = new System.Windows.Forms.TextBox();
+            this.SectionLink = new System.Windows.Forms.LinkLabel();
+            this.CoursesLink = new System.Windows.Forms.LinkLabel();
+            this.Studentlink = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Studentidcb = new System.Windows.Forms.ComboBox();
+            this.ResetAllFields = new System.Windows.Forms.LinkLabel();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -67,13 +72,13 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.Studentidcb);
             this.groupBox4.Controls.Add(this.groupBox1);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.studentidlb);
-            this.groupBox4.Controls.Add(this.studentidtb);
             this.groupBox4.Controls.Add(this.submitid);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(12, 28);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(276, 352);
             this.groupBox4.TabIndex = 28;
@@ -100,6 +105,7 @@
             this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.listBox1.Size = new System.Drawing.Size(247, 100);
             this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // groupBox5
             // 
@@ -160,18 +166,10 @@
             this.studentidlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentidlb.Location = new System.Drawing.Point(9, 25);
             this.studentidlb.Name = "studentidlb";
-            this.studentidlb.Size = new System.Drawing.Size(106, 16);
+            this.studentidlb.Size = new System.Drawing.Size(114, 16);
             this.studentidlb.TabIndex = 0;
-            this.studentidlb.Text = "Enter Student ID:";
+            this.studentidlb.Text = "Enter Instructor ID:";
             this.studentidlb.Click += new System.EventHandler(this.studentidlb_Click);
-            // 
-            // studentidtb
-            // 
-            this.studentidtb.Location = new System.Drawing.Point(116, 22);
-            this.studentidtb.Name = "studentidtb";
-            this.studentidtb.Size = new System.Drawing.Size(38, 22);
-            this.studentidtb.TabIndex = 1;
-            this.studentidtb.TextChanged += new System.EventHandler(this.studentidtb_TextChanged);
             // 
             // submitid
             // 
@@ -204,8 +202,8 @@
             this.groupBox6.Controls.Add(this.citytb);
             this.groupBox6.Controls.Add(this.slnametb);
             this.groupBox6.Controls.Add(this.statetb);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(294, 12);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(294, 28);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(265, 352);
             this.groupBox6.TabIndex = 29;
@@ -215,10 +213,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 242);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 242);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 20);
+            this.label8.Size = new System.Drawing.Size(33, 16);
             this.label8.TabIndex = 28;
             this.label8.Text = "Zip :";
             // 
@@ -243,10 +241,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 206);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 206);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 20);
+            this.label6.Size = new System.Drawing.Size(45, 16);
             this.label6.TabIndex = 27;
             this.label6.Text = "State :";
             // 
@@ -261,10 +259,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 171);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 20);
+            this.label7.Size = new System.Drawing.Size(36, 16);
             this.label7.TabIndex = 28;
             this.label7.Text = "City :";
             // 
@@ -295,60 +293,60 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 278);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(14, 277);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
+            this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 15;
             this.label4.Text = "Email:";
             // 
             // cnamelb
             // 
             this.cnamelb.AutoSize = true;
-            this.cnamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnamelb.Location = new System.Drawing.Point(13, 100);
+            this.cnamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cnamelb.Location = new System.Drawing.Point(12, 100);
             this.cnamelb.Name = "cnamelb";
-            this.cnamelb.Size = new System.Drawing.Size(48, 20);
+            this.cnamelb.Size = new System.Drawing.Size(39, 16);
             this.cnamelb.TabIndex = 19;
             this.cnamelb.Text = "Last :";
             // 
             // sfnamelb
             // 
             this.sfnamelb.AutoSize = true;
-            this.sfnamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sfnamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sfnamelb.Location = new System.Drawing.Point(14, 66);
             this.sfnamelb.Name = "sfnamelb";
-            this.sfnamelb.Size = new System.Drawing.Size(48, 20);
+            this.sfnamelb.Size = new System.Drawing.Size(39, 16);
             this.sfnamelb.TabIndex = 5;
             this.sfnamelb.Text = "First :";
             // 
             // streetlb
             // 
             this.streetlb.AutoSize = true;
-            this.streetlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.streetlb.Location = new System.Drawing.Point(1, 137);
+            this.streetlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.streetlb.Location = new System.Drawing.Point(14, 137);
             this.streetlb.Name = "streetlb";
-            this.streetlb.Size = new System.Drawing.Size(61, 20);
+            this.streetlb.Size = new System.Drawing.Size(49, 16);
             this.streetlb.TabIndex = 18;
             this.streetlb.Text = "Street :";
             // 
             // studidlb
             // 
             this.studidlb.AutoSize = true;
-            this.studidlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studidlb.Location = new System.Drawing.Point(27, 32);
+            this.studidlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studidlb.Location = new System.Drawing.Point(14, 32);
             this.studidlb.Name = "studidlb";
-            this.studidlb.Size = new System.Drawing.Size(34, 20);
+            this.studidlb.Size = new System.Drawing.Size(27, 16);
             this.studidlb.TabIndex = 4;
             this.studidlb.Text = "ID :";
             // 
             // officelb
             // 
             this.officelb.AutoSize = true;
-            this.officelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.officelb.Location = new System.Drawing.Point(4, 310);
+            this.officelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.officelb.Location = new System.Drawing.Point(14, 313);
             this.officelb.Name = "officelb";
-            this.officelb.Size = new System.Drawing.Size(59, 20);
+            this.officelb.Size = new System.Drawing.Size(48, 16);
             this.officelb.TabIndex = 16;
             this.officelb.Text = "Office :";
             // 
@@ -385,11 +383,92 @@
             this.statetb.Size = new System.Drawing.Size(186, 26);
             this.statetb.TabIndex = 7;
             // 
+            // SectionLink
+            // 
+            this.SectionLink.AutoSize = true;
+            this.SectionLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionLink.Location = new System.Drawing.Point(150, 8);
+            this.SectionLink.Name = "SectionLink";
+            this.SectionLink.Size = new System.Drawing.Size(53, 16);
+            this.SectionLink.TabIndex = 37;
+            this.SectionLink.TabStop = true;
+            this.SectionLink.Text = "Section";
+            this.SectionLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SectionLink_LinkClicked);
+            // 
+            // CoursesLink
+            // 
+            this.CoursesLink.AutoSize = true;
+            this.CoursesLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoursesLink.Location = new System.Drawing.Point(219, 8);
+            this.CoursesLink.Name = "CoursesLink";
+            this.CoursesLink.Size = new System.Drawing.Size(58, 16);
+            this.CoursesLink.TabIndex = 36;
+            this.CoursesLink.TabStop = true;
+            this.CoursesLink.Text = "Courses";
+            this.CoursesLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CoursesLink_LinkClicked);
+            // 
+            // Studentlink
+            // 
+            this.Studentlink.AutoSize = true;
+            this.Studentlink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Studentlink.Location = new System.Drawing.Point(77, 8);
+            this.Studentlink.Name = "Studentlink";
+            this.Studentlink.Size = new System.Drawing.Size(53, 16);
+            this.Studentlink.TabIndex = 35;
+            this.Studentlink.TabStop = true;
+            this.Studentlink.Text = "Student";
+            this.Studentlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Studentlink_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(22, 8);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(45, 16);
+            this.linkLabel1.TabIndex = 34;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Home";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // Studentidcb
+            // 
+            this.Studentidcb.FormattingEnabled = true;
+            this.Studentidcb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.Studentidcb.Location = new System.Drawing.Point(125, 17);
+            this.Studentidcb.Name = "Studentidcb";
+            this.Studentidcb.Size = new System.Drawing.Size(47, 24);
+            this.Studentidcb.TabIndex = 38;
+            // 
+            // ResetAllFields
+            // 
+            this.ResetAllFields.AutoSize = true;
+            this.ResetAllFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetAllFields.Location = new System.Drawing.Point(455, 8);
+            this.ResetAllFields.Name = "ResetAllFields";
+            this.ResetAllFields.Size = new System.Drawing.Size(92, 16);
+            this.ResetAllFields.TabIndex = 44;
+            this.ResetAllFields.TabStop = true;
+            this.ResetAllFields.Text = "Clear all fields";
+            this.ResetAllFields.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ResetAllFields_LinkClicked);
+            // 
             // InstructorControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 378);
+            this.ClientSize = new System.Drawing.Size(564, 403);
+            this.Controls.Add(this.ResetAllFields);
+            this.Controls.Add(this.SectionLink);
+            this.Controls.Add(this.CoursesLink);
+            this.Controls.Add(this.Studentlink);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Name = "InstructorControl";
@@ -402,6 +481,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -416,7 +496,6 @@
         private System.Windows.Forms.Button dropC;
         private System.Windows.Forms.Label crn;
         private System.Windows.Forms.Label studentidlb;
-        private System.Windows.Forms.TextBox studentidtb;
         private System.Windows.Forms.Button submitid;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label8;
@@ -438,5 +517,11 @@
         private System.Windows.Forms.TextBox citytb;
         private System.Windows.Forms.TextBox slnametb;
         private System.Windows.Forms.TextBox statetb;
+        private System.Windows.Forms.LinkLabel SectionLink;
+        private System.Windows.Forms.LinkLabel CoursesLink;
+        private System.Windows.Forms.LinkLabel Studentlink;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox Studentidcb;
+        private System.Windows.Forms.LinkLabel ResetAllFields;
     }
 }

@@ -16,6 +16,7 @@ namespace RegistrationRon
         {
             InitializeComponent();
         }
+        
         //Declariations
         Student ww;
         int sidy;
@@ -33,7 +34,7 @@ namespace RegistrationRon
             try
             {
                 //accessing the database by student id.
-                int sid = Int32.Parse(studentidtb.Text);
+                int sid = Int32.Parse(Studentidcb.Text);
                 Student s1 = new Student();
                 s1.SelectDB(sid);
                 s1.display();
@@ -54,7 +55,7 @@ namespace RegistrationRon
                 gpatb.Text = s1.getgpa().ToString();
 
                 //Assigning textbox data to var
-                sidy = Int32.Parse(studentidtb.Text);
+                sidy = Int32.Parse(Studentidcb.Text);
                 fname = fsnametb.Text;
                 lname = slnametb.Text;
                 street = streettb.Text;
@@ -98,7 +99,7 @@ namespace RegistrationRon
             //Assigning textboxs values to var
             try
             {
-                sidy = Int32.Parse(studentidtb.Text);
+                sidy = Int32.Parse(Studentidcb.Text);
                 fname = fsnametb.Text;
                 lname = slnametb.Text;
                 street = streettb.Text;
@@ -143,17 +144,71 @@ namespace RegistrationRon
         // Delete Button
         private void dropC_Click(object sender, EventArgs e)
         {
+            
             //Deleting Student from database
             try
             {
                 ww.SelectDB(sidy);
                 ww.DeleteDB();
                 MessageBox.Show("Student Data Deletion Successful!");
+                Studentidcb.Items.Remove(sidy);
+                listBox1.Items.Clear();
+                sidd.Text = "";
+                fsnametb.Text = "";
+                slnametb.Text = "";
+                streettb.Text = "";
+                citytb.Text = "";
+                statetb.Text = "";
+                ziptb.Text = "";
+                emailtb.Text = "";
+                gpatb.Text = "";
             }
             catch(Exception are)
             {
                 MessageBox.Show(are.ToString());
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Admin lg = new Admin();
+            lg.Show();
+            this.Hide();
+        }
+
+        private void Instructorlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InstructorControl ic = new InstructorControl();
+            ic.Show();
+            this.Hide();
+        }
+
+        private void SectionLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SectionControl sn = new SectionControl();
+            sn.Show();
+            this.Hide();
+        }
+
+        private void CoursesLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CourseControl cc = new CourseControl();
+            cc.Show();
+            this.Hide();
+        }
+
+        private void ResetAllFields_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {//Reset all textboxes
+            sidd.Text = "";
+            fsnametb.Text = "";
+            slnametb.Text = "";
+            streettb.Text = "";
+            citytb.Text = "";
+            statetb.Text = "";
+            ziptb.Text = "";
+            emailtb.Text = "";
+            gpatb.Text = "";
+            listBox1.Items.Clear();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -183,6 +238,7 @@ namespace RegistrationRon
         //The Add class button
         private void button1_Click(object sender, EventArgs e)
         {
+           
             //Assigning textboxs values to var
             try
             {
@@ -208,8 +264,10 @@ namespace RegistrationRon
                     ss1 = new Student(sidy, fname, lname, new Address(street, city, state, zip), email, gpa);
                     ss1.display();
                     ss1.InsertDB();
-
                     MessageBox.Show("New Student Added Successful!");
+                    int temp = ss1.getsid();
+                    Studentidcb.Items.Add(temp);
+                    listBox1.Items.Clear();
                 }
 
             }

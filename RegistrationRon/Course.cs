@@ -20,6 +20,7 @@ namespace RegistrationRon
         public string Description;
         public int CreditHour;
         public Schedule ssy = new Schedule();
+        string course1;
 
         //--------constructors---------//
         public Course()
@@ -130,11 +131,11 @@ namespace RegistrationRon
                 OleDbConnection.Close();
             }
             //GetcList();
-            //SelectDBt();
+            SelectDBt();
             // end SelectDB
         }
 
-      /*  public void SelectDBt()
+       public void SelectDBt()
         {
             //Course s1 = new Course();
             DBSetup();
@@ -151,13 +152,23 @@ namespace RegistrationRon
                 while (dr.Read())
                 {
                     // dr.Read();
+                    string cc1, cc2, cc3, cc4;
                     Course c2 = new Course();
                     setCourseID(dr.GetValue(0) + "");
                     setCourseName(dr.GetValue(1) + "");
                     setDescription(dr.GetValue(2) + "");
                     setCreditHour(Int32.Parse(dr.GetValue(3) + ""));
-                    ssy.addc(c2);
-                    c2.display();
+                    //hfskhfksf
+                    cc1 = c2.getCourseID();
+                    cc2 = c2.getCourseName();
+
+                    //course1 = cc1 + cc2;
+                    //CourseControl s1 = new CourseControl(course1);
+                   //ssy.addc(c2);
+                   // c2.display();
+                   
+
+                   // c2.tostring  then add to listbox
                 }
             
             }
@@ -172,8 +183,8 @@ namespace RegistrationRon
             //GetcList();
             // end SelectDB
         }
-
-            */
+    
+           
 
 
         public void GetcList()

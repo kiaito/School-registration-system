@@ -31,6 +31,54 @@ namespace RegistrationRon
         {
 
         }
+
+        private void Studentlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentControl sc = new StudentControl();
+            sc.Show();
+            this.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Admin an = new Admin();
+            an.Show();
+            this.Hide();
+        }
+
+        private void SectionLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SectionControl sc = new SectionControl();
+            sc.Show();
+            this.Hide();
+        }
+
+        private void CoursesLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CourseControl cc = new CourseControl();
+            this.Hide();
+            cc.Show();
+        }
+
+        private void ResetAllFields_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Clearing all fields boxes
+
+            fsnametb.Text = "";
+           slnametb.Text = "";
+            streettb.Text = "";
+            citytb.Text = "";
+            statetb.Text = "";
+            ziptb.Text = "";
+            emailtb.Text = "";
+            officetb.Text = "";
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void studentidtb_TextChanged(object sender, EventArgs e)
         {
 
@@ -39,12 +87,25 @@ namespace RegistrationRon
         //Delete button
         private void dropC_Click(object sender, EventArgs e)
         {
-            //Deleting Student from database
+            //Deleting Instructor from database
             try
             {
                 intr.SelectDB(sidy);
                 intr.DeleteDB();
                 MessageBox.Show("Instructor Data Deletion Successful!");
+                Studentidcb.Items.Remove(sidy);
+                listBox1.Items.Clear();
+
+                //Clearing all textbox fields
+                sidd.Text = "";
+                fsnametb.Text = "";
+                slnametb.Text = "";
+                streettb.Text = "";
+                citytb.Text = "";
+                statetb.Text = "";
+                ziptb.Text = "";
+                emailtb.Text = "";
+                officetb.Text = "";
             }
             catch (Exception are)
             {
@@ -57,7 +118,7 @@ namespace RegistrationRon
         {
             try
             {
-                sidy = Int32.Parse(studentidtb.Text);
+                sidy = Int32.Parse(Studentidcb.Text);
                 fname = fsnametb.Text;
                 lname = slnametb.Text;
                 street = streettb.Text;
@@ -104,6 +165,7 @@ namespace RegistrationRon
         private void button1_Click(object sender, EventArgs e)
         {
             //Assigning textboxs values to var
+            
             try
             {
                 sidy = Int32.Parse(sidd.Text);
@@ -130,9 +192,10 @@ namespace RegistrationRon
              ss1 = new Instructor(sidy, fname, lname, new Address(street, city, state, zip), office, email);
              ss1.display();
                     ss1.InsertDB();
-
-
                     MessageBox.Show("New Instructor Added Successful!");
+                   int temp = ss1.getiid();
+                   Studentidcb.Items.Add(temp);
+                    listBox1.Items.Clear();
                 }
 
             }
@@ -166,7 +229,7 @@ namespace RegistrationRon
             try
             {
                 //accessing the database by Instructor id.
-                int iid = Int32.Parse(studentidtb.Text);
+                int iid = Int32.Parse(Studentidcb.Text);
                 Instructor s1 = new Instructor();
                 s1.SelectDB(iid);
                 s1.display();
@@ -188,7 +251,7 @@ namespace RegistrationRon
                 
 
                 //Assigning textbox data to var
-                sidy = Int32.Parse(studentidtb.Text);
+                sidy = Int32.Parse(Studentidcb.Text);
                 fname = fsnametb.Text;
                 lname = slnametb.Text;
                 street = streettb.Text;
