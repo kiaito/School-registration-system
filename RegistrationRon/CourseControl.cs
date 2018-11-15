@@ -20,10 +20,14 @@ namespace RegistrationRon
         {
             InitializeComponent();
         }
+        public CourseControl(string cd1)
+        {
+            course1 = cd1;
+        }
         Course sub;
         string cid, cname, cdesc;
         int chour;
-
+        string course1;
         private void button1_Click(object sender, EventArgs e)
         {
             //Assigning textboxs values to var
@@ -59,7 +63,7 @@ namespace RegistrationRon
 
         private void CourseControl_Load(object sender, EventArgs e)
         {
-
+           // listBox1.Items.Add(course1);
         }
         private void dropC_Click(object sender, EventArgs e)
         {
@@ -74,6 +78,35 @@ namespace RegistrationRon
                 MessageBox.Show(are.ToString());
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Admin an = new Admin();
+            this.Hide();
+            an.Show();
+        }
+
+        private void Studentlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentControl sc = new StudentControl();
+            this.Hide();
+            sc.Show();
+        }
+
+        private void SectionLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SectionControl scc = new SectionControl();
+            this.Hide();
+            scc.Show();
+        }
+
+        private void InstructorLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InstructorControl ic = new InstructorControl();
+            this.Hide();
+            ic.Show();
+        }
+
         //The update button
         private void button2_Click(object sender, EventArgs e)
         {
@@ -91,7 +124,7 @@ namespace RegistrationRon
                     MessageBox.Show("Make sure all fields are filled out");
                 }
                 else
-                {//Setting values and Updating student into database   
+                {//Setting values and Updating Courses into database   
                     sub.setCourseID(cid);
                     sub.setCourseName(cname);
                     sub.setDescription(cdesc);

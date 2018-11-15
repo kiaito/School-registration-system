@@ -26,5 +26,40 @@ namespace RegistrationRon
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentControl sc = new StudentControl();
+            sc.Show();
+            this.Hide();
+        }
+
+        private void Instructorlb_Click(object sender, EventArgs e)
+        {
+            InstructorControl ic = new InstructorControl();
+            ic.Show();
+            this.Hide();
+        }
+
+        private void Sectionlb_Click(object sender, EventArgs e)
+        {
+            SectionControl sn = new SectionControl();
+            sn.Show();
+            this.Hide();
+        }
+
+        private void Courselb_Click(object sender, EventArgs e)
+        {
+            CourseControl cc = new CourseControl();
+            cc.Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Loginform lg = new Loginform();
+            this.Hide();
+            lg.Show();
+        }
     }
 }

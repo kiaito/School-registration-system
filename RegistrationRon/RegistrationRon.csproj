@@ -98,11 +98,11 @@
     <Compile Include="StudentControl.Designer.cs">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="studentDisplay.cs">
+    <Compile Include="StudentDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="studentDisplay.Designer.cs">
-      <DependentUpon>studentDisplay.cs</DependentUpon>
+    <Compile Include="StudentDisplay.Designer.cs">
+      <DependentUpon>StudentDisplay.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -134,8 +134,8 @@
     <EmbeddedResource Include="StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentDisplay.resx">
-      <DependentUpon>studentDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="StudentDisplay.resx">
+      <DependentUpon>StudentDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

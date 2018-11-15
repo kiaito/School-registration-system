@@ -122,14 +122,15 @@ namespace RegistrationRon
             {
                 OleDbConnection.Close();
             }
+            //SelectDBi();
         }
         // end SelectDB
 
         //----Select Database Connection-----//
-        public void SelectDBi(int id)
+        public void SelectDBi()
         {
             DBSetup();
-            cmd = "Select * from Sections where Instructor = " + id;
+            cmd = "Select * from Sections";
             OleDbDataAdapter2.SelectCommand.CommandText = cmd;
             OleDbDataAdapter2.SelectCommand.Connection = OleDbConnection;
             Console.WriteLine(cmd);
@@ -144,8 +145,9 @@ namespace RegistrationRon
                 setCourseID(dr.GetValue(1) + "");
                 setDaytime(dr.GetValue(2) + "");
                 setroom(dr.GetValue(3) + "");
-                InstructorID = id;
-                //setinstructorID(Int32.Parse(dr.GetValue(4) + ""));
+               // InstructorID = id;
+                setinstructorID(Int32.Parse(dr.GetValue(4) + ""));
+                
             }
             catch (Exception ex)
             {
@@ -195,8 +197,8 @@ namespace RegistrationRon
         public void Upddate()
         {
             DBSetup();
-            cmd = "Update Sections set CourseID ='" + getCourseID() + "',"
-                + "TimeDays ='" + getDaytime() + "',"
+            cmd = "Update Sections set CRN ='" + getCrn() + "',"
+                + "CourseID ='" + getCourseID() + "',"+ "TimeDays ='" + getDaytime() + "',"
                 + "RoomNo ='" + getroom() + "',"
                 + "Instructor =" + getinstructorID() + " "
                + "where CRN = " + getCrn();

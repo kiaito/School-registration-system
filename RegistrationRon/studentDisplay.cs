@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace RegistrationRon
 {
-    public partial class studentDisplay : Form
+    public partial class StudentDisplay : Form
         
     {
-        public studentDisplay()
+        public StudentDisplay()
         {
             InitializeComponent();
         }
 
         Student ww;
 
+       
+        
         private void studentDisplay_Load(object sender, EventArgs e)
         {
 
@@ -156,5 +158,27 @@ namespace RegistrationRon
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Loginform lg = new Loginform();
+            lg.Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Loginform ad = new Loginform();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void Instructorlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InstructorControl ad = new InstructorControl();
+            ad.Show();
+            this.Hide();
+        }
     }
+
 }
