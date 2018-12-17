@@ -10,7 +10,7 @@ namespace RegistrationRon
     {
         public Section[] sec = new Section[10];
         public int count;
-        public Course[] arc = new Course[25];
+        //public Course[] arc = new Course[25];
 
 
         public void Section()
@@ -42,22 +42,19 @@ namespace RegistrationRon
                 sec[i].display();
             }
         }
-        public void displayc()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                arc[i].display();
-            }
-        }
+       // public void displayc()
+        //{
+          //  for (int i = 0; i < count; i++)
+            //{
+              //  arc[i].display();
+            //}
+        //}
 
-        public void Course()
-        {
-
-        }
-        public void addc(Course c)
+      
+      /*  public void addc(Course c)
         {
             arc[count] = c;
             count++;
-        }
+        }*/
     }
 }
