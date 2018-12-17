@@ -41,7 +41,14 @@ namespace RegistrationRon
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
-            userid = Int32.Parse(Usertb.Text);
+            try
+            {
+                userid = Int32.Parse(Usertb.Text);
+            }
+            catch(Exception ae)
+            {
+                MessageBox.Show(ae.Message);
+            }
 
             if (Pwtb.Text.Equals(stud)){
                 //Forward control to studentdisplay form
