@@ -22,14 +22,6 @@ The Administrator will be able to add delete or update any information in the St
 - Add Update Delete Sections
 - Add Update Delete Courses
 
-### Business Objects Used:
-- Student
-- Instructor
-- Section
-- Courses
-- Address
-- Schedule
-
 ### Languages Used:
 - C#.Net
 - Sql
